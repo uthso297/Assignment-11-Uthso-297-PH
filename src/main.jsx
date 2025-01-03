@@ -8,12 +8,13 @@ import {
 import Home from './Pages/Home';
 import Root from './Root/Root';
 import AllBooks from './Pages/AllBooks';
+import AddBook from './Pages/AddBook';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
-    children:[
+    children: [
       {
         path: "/",
         element: <Home></Home>
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: 'allBooks',
         element: <AllBooks></AllBooks>
+      },
+      {
+        path: 'addBook',
+        element: <AddBook></AddBook>
       }
     ]
   },

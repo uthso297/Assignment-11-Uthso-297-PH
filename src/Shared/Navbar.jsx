@@ -5,7 +5,7 @@ const Navbar = () => {
     const links = <>
         <Link ><button className="hover:text-indigo-500">Home</button></Link>
         <Link to='/allBooks'><button className="hover:text-indigo-500">All Books</button></Link>
-        <Link ><button className="hover:text-indigo-500">Add Books</button></Link>
+        <Link to='/addBook'><button className="hover:text-indigo-500">Add Books</button></Link>
         <Link ><button className="hover:text-indigo-500">Borrowed Books</button></Link>
     </>
     const buttons = <>
