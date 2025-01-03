@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
 
     const links = <>
-        <Link ><a className="hover:text-indigo-500">Home</a></Link>
-        <Link to='/allBooks'><a className="hover:text-indigo-500">All Books</a></Link>
-        <Link ><a className="hover:text-indigo-500">Add Books</a></Link>
-        <Link ><a className="hover:text-indigo-500">Borrowed Books</a></Link>
+        <Link ><button className="hover:text-indigo-500">Home</button></Link>
+        <Link to='/allBooks'><button className="hover:text-indigo-500">All Books</button></Link>
+        <Link ><button className="hover:text-indigo-500">Add Books</button></Link>
+        <Link ><button className="hover:text-indigo-500">Borrowed Books</button></Link>
     </>
     const buttons = <>
         <button className="inline-block px-3 py-2 rounded-lg transform transition bg-indigo-500 hover:bg-indigo-400 hover:-translate-y-0.5 focus:ring-indigo-500 focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-indigo-600 uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base">Login</button>
