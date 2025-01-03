@@ -1,0 +1,202 @@
+[
+    {
+        "image": "https://i.ibb.co.com/zJfHLCR/slider1.webp",
+        "title": "The Silent Forest",
+        "quantity": 10,
+        "author": "John Doe",
+        "category": "Novel",
+        "short_description": "A tale of love and loss in a forgotten town.",
+        "rating": 4,
+        "book_content": "This novel explores the complexities of relationships and the haunting impact of a town shrouded in mystery."
+    },
+    {
+        "image": "https://i.ibb.co.com/zJfHLCR/slider1.webp",
+        "title": "The Last Hunt",
+        "quantity": 15,
+        "author": "Jane Smith",
+        "category": "Thriller",
+        "short_description": "A race against time to stop a deadly serial killer.",
+        "rating": 5,
+        "book_content": "In 'The Last Hunt', a detective teams up with an unlikely partner to track down a ruthless killer who seems to be always one step ahead."
+    },
+    {
+        "image": "https://i.ibb.co.com/zJfHLCR/slider1.webp",
+        "title": "Ancient Rome: A History",
+        "quantity": 8,
+        "author": "Richard White",
+        "category": "History",
+        "short_description": "A deep dive into the rise and fall of the Roman Empire.",
+        "rating": 4,
+        "book_content": "This book offers a comprehensive look at the political, social, and cultural aspects of Ancient Rome, providing insights into its extraordinary civilization."
+    },
+    {
+        "image": "https://example.com/images/book4.jpg",
+        "title": "Galactic Odyssey",
+        "quantity": 20,
+        "author": "Alex Young",
+        "category": "Sci-Fi",
+        "short_description": "An interstellar journey to the farthest reaches of the galaxy.",
+        "rating": 5,
+        "book_content": "Set in the distant future, this Sci-Fi epic follows a crew of explorers as they chart uncharted territories in space, encountering alien species and unknown dangers."
+    },
+    {
+        "image": "https://example.com/images/book5.jpg",
+        "title": "Echoes of the Past",
+        "quantity": 5,
+        "author": "Michael Lee",
+        "category": "Novel",
+        "short_description": "A story about the lingering echoes of history on the present.",
+        "rating": 3,
+        "book_content": "A contemporary fiction novel blending history and personal stories, where the main character finds connections between past and present events in her life."
+    },
+    {
+        "image": "https://example.com/images/book6.jpg",
+        "title": "The Shadow Files",
+        "quantity": 12,
+        "author": "Catherine Moore",
+        "category": "Thriller",
+        "short_description": "A high-stakes battle against a government conspiracy.",
+        "rating": 4,
+        "book_content": "A conspiracy thriller involving an ex-CIA agent who uncovers a secret government project and must go on the run to expose the truth."
+    },
+    {
+        "image": "https://example.com/images/book7.jpg",
+        "title": "The Age of Exploration",
+        "quantity": 7,
+        "author": "Emily Johnson",
+        "category": "History",
+        "short_description": "A detailed account of the exploration of the new world.",
+        "rating": 4,
+        "book_content": "This book narrates the voyages of famous explorers like Columbus and Magellan and explores the impact of their discoveries on world history."
+    },
+    {
+        "image": "https://example.com/images/book8.jpg",
+        "title": "The Andromeda Protocol",
+        "quantity": 30,
+        "author": "David Carter",
+        "category": "Sci-Fi",
+        "short_description": "A secret mission to prevent a galactic catastrophe.",
+        "rating": 5,
+        "book_content": "When a mysterious alien signal is detected, a team of scientists and military experts is assembled to decode the message before it’s too late."
+    },
+    {
+        "image": "https://example.com/images/book9.jpg",
+        "title": "The Road to Redemption",
+        "quantity": 25,
+        "author": "Anna Davis",
+        "category": "Novel",
+        "short_description": "A gripping tale of personal redemption and self-discovery.",
+        "rating": 3,
+        "book_content": "This novel follows a troubled young woman who returns to her hometown to face the demons of her past and find her path to redemption."
+    },
+    {
+        "image": "https://example.com/images/book10.jpg",
+        "title": "Hunt for the Assassin",
+        "quantity": 50,
+        "author": "Samuel Black",
+        "category": "Thriller",
+        "short_description": "A deadly game of cat and mouse with a top-tier assassin.",
+        "rating": 4,
+        "book_content": "A seasoned detective tracks down a notorious assassin, only to discover that the assassin has been planning a much larger and more sinister plot."
+    },
+    {
+        "image": "https://example.com/images/book11.jpg",
+        "title": "The Egyptian Pharaohs",
+        "quantity": 3,
+        "author": "Susan White",
+        "category": "History",
+        "short_description": "A deep look into the rulers of ancient Egypt.",
+        "rating": 5,
+        "book_content": "Focusing on the lives and legacies of ancient Egyptian pharaohs, this book offers in-depth analysis of their reigns and the dynasties that shaped Egypt."
+    },
+    {
+        "image": "https://example.com/images/book12.jpg",
+        "title": "Time Machine",
+        "quantity": 18,
+        "author": "H.G. Wells",
+        "category": "Sci-Fi",
+        "short_description": "A classic tale of time travel and the exploration of future societies.",
+        "rating": 5,
+        "book_content": "The protagonist builds a machine capable of traveling through time, visiting far-off future worlds and encountering both marvels and perils along the way."
+    },
+    {
+        "image": "https://example.com/images/book13.jpg",
+        "title": "The Secret Garden",
+        "quantity": 25,
+        "author": "Frances Hodgson Burnett",
+        "category": "Novel",
+        "short_description": "A timeless story of friendship and personal growth.",
+        "rating": 4,
+        "book_content": "The novel follows Mary Lennox, a lonely girl who discovers a hidden garden and builds a deep friendship that helps her grow into a kinder person."
+    },
+    {
+        "image": "https://example.com/images/book14.jpg",
+        "title": "Codebreaker",
+        "quantity": 10,
+        "author": "John R. Moore",
+        "category": "Thriller",
+        "short_description": "A story of espionage and breaking an unbreakable code.",
+        "rating": 4,
+        "book_content": "In the world of cryptography and spycraft, a team of elite codebreakers must decipher a complex message that could save or destroy nations."
+    },
+    {
+        "image": "https://example.com/images/book15.jpg",
+        "title": "The Great Depression",
+        "quantity": 5,
+        "author": "Alice Turner",
+        "category": "History",
+        "short_description": "An analysis of one of the darkest periods in world history.",
+        "rating": 5,
+        "book_content": "This historical account provides a detailed examination of the causes, effects, and global impact of the Great Depression."
+    },
+    {
+        "image": "https://example.com/images/book16.jpg",
+        "title": "Rogue Planet",
+        "quantity": 13,
+        "author": "Samuel R. Hart",
+        "category": "Sci-Fi",
+        "short_description": "A rogue planet on a collision course with Earth.",
+        "rating": 4,
+        "book_content": "A team of astronauts is sent on a mission to prevent a rogue planet from crashing into Earth, leading them to make groundbreaking scientific discoveries along the way."
+    },
+    {
+        "image": "https://example.com/images/book17.jpg",
+        "title": "Unbroken Dreams",
+        "quantity": 30,
+        "author": "Sandra Lee",
+        "category": "Novel",
+        "short_description": "A journey through hardship, hope, and self-empowerment.",
+        "rating": 4,
+        "book_content": "This is a heartfelt story of a woman who overcomes the challenges of living through personal loss and hardship to find strength and a renewed purpose in life."
+    },
+    {
+        "image": "https://example.com/images/book18.jpg",
+        "title": "Vengeance Rising",
+        "quantity": 50,
+        "author": "Mark Wells",
+        "category": "Thriller",
+        "short_description": "A quest for revenge that spirals into chaos.",
+        "rating": 5,
+        "book_content": "When his family is murdered, a man embarks on a mission of revenge, but his quest quickly turns into a nightmare that threatens to consume everything he loves."
+    },
+    {
+        "image": "https://example.com/images/book19.jpg",
+        "title": "The Fall of the Pharaohs",
+        "quantity": 10,
+        "author": "Peter Fox",
+        "category": "History",
+        "short_description": "An investigation into the decline of ancient Egyptian power.",
+        "rating": 4,
+        "book_content": "This book delves into the reasons behind the fall of Egypt’s powerful pharaohs and the subsequent collapse of the ancient empire."
+    },
+    {
+        "image": "https://example.com/images/book20.jpg",
+        "title": "The Martian Colony",
+        "quantity": 25,
+        "author": "William L. Scott",
+        "category": "Sci-Fi",
+        "short_description": "The story of the first human colony on Mars.",
+        "rating": 5,
+        "book_content": "In this gripping tale, humanity establishes its first colony on Mars, facing technological, biological, and psychological challenges in their effort to survive on the Red Planet."
+    }
+]
