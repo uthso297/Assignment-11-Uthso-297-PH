@@ -1,32 +1,14 @@
-import { useEffect, useState } from "react";
-import Spinner from "../Components/Spinner";
-import { useLocation } from "react-router-dom";
+import { useState } from "react";
 
-const AllBooks = () => {
-    const [books, setBooks] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const location = useLocation();
-    console.log(location)
-    useEffect(() => {
-        setTimeout(() => {
-            fetch('http://localhost:5000/allBooks')
-                // fetch('http://localhost:5000/allBooks')
-                .then(res => res.json())
-                .then(data => {
-                    setBooks(data);
-                    setLoading(false);
-                });
-        }, 2000);
-    }, []);
+const Borrowed = () => {
+    const [books, setBooks] = useState(null)
 
-    const handleUpdateClick = (book) => {
-        console.log("Updating book:", book);
-    };
+    const handleReturnClick = (book) => {
+        console.log(book)
+    }
 
-    if (loading) {
-        return <Spinner />;
-    } else {
-        return (
+    return (
+        <div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-4 py-4">
                 {books.map((book, index) => (
                     <div key={index} className="bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transform hover:scale-105 transition duration-300">
@@ -42,17 +24,17 @@ const AllBooks = () => {
                             </div>
                             <p className="text-sm text-gray-700 mt-2">{book.short_description}</p>
                             <button
-                                onClick={() => handleUpdateClick(book)}
+                                onClick={() => handleReturnClick(book)}
                                 className="mt-4 py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300"
                             >
-                                Update
+                                Return
                             </button>
                         </div>
                     </div>
                 ))}
             </div>
-        );
-    }
+        </div>
+    );
 };
 
-export default AllBooks;
+export default Borrowed;

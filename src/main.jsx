@@ -15,6 +15,7 @@ import Register from './Pages/Register';
 import AuthProvider from './Components/AuthProvider';
 import CategoryWiseBook from './Pages/CategoryWiseBook';
 import Details from './Pages/Details';
+import Borrowed from './Pages/Borrowed';
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
         path: 'bookdetails/:id',
         element: <Details></Details>,
 
+      },
+      {
+        path: 'borrowed',
+        element: <Borrowed></Borrowed>
       }
     ]
   },

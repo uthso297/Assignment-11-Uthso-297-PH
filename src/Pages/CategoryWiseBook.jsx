@@ -15,7 +15,8 @@ const CategoryWiseBook = () => {
     const category = urlCategory || cat
     useEffect(() => {
         setTimeout(() => {
-            fetch('Book.json')
+            fetch('http://localhost:5000/allBooks')
+                // fetch('http://localhost:5000/allBooks')
                 .then(res => res.json())
                 .then(datas => {
                     const res = datas.filter((data) => data.category === category)

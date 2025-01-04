@@ -18,7 +18,8 @@ const Home = () => {
             navigate("/", { replace: true });
         }
         setTimeout(() => {
-            fetch('Books.json')
+            fetch('http://localhost:5000/allBooks')
+                // fetch('http://localhost:5000/allBooks')
                 .then(res => res.json())
                 .then(data => {
                     setBooks(data);

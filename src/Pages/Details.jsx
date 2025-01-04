@@ -10,7 +10,7 @@ const Details = () => {
     const [book, setBook] = useState(null);
 
     useEffect(() => {
-        fetch('/Book.json')
+        fetch('/Books.json')
             .then(res => res.json())
             .then(data => {
                 console.log(data)
