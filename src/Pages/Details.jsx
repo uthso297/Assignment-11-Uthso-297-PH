@@ -1,24 +1,13 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+// import { useEffect, useState } from "react";
+import { useLoaderData } from "react-router-dom";
 import Spinner from "../Components/Spinner";
 
 const Details = () => {
-    const params = useParams();
-    const id = parseInt(params.id)
-    console.log(id)
-    console.log(typeof (id))
-    const [book, setBook] = useState(null);
-
-    useEffect(() => {
-        fetch('/Books.json')
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                const item = data.find((book) => book.book_id === id);
-                setBook(item)
-            })
-    }, [])
-
+    const book = useLoaderData();
+    const handleBorrow = (e) => {
+        console.log(e)
+        console.log(typeof(e))
+    }
     if (!book) {
         return <Spinner></Spinner>
     }
@@ -27,9 +16,9 @@ const Details = () => {
             <div className="bg-white shadow-lg rounded-lg max-w-3xl w-full overflow-hidden">
                 <div className="relative">
                     <img
-                        src={book.image} 
+                        src={book.image}
                         alt={book.title}
-                        className="w-full h-64 object-cover rounded-t-lg"
+                        className="w-full h-96 rounded-t-lg"
                     />
                 </div>
 
@@ -47,7 +36,7 @@ const Details = () => {
                     </div>
 
                     <div className="mt-4">
-                        <button className="w-full py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                        <button onClick={() => handleBorrow(book._id)} className="w-full py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300">
                             Borrow
                         </button>
                     </div>

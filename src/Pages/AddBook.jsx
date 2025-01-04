@@ -5,11 +5,11 @@ const AddBook = () => {
         image: '',
         name: '',
         quantity: '',
-        authorName: '',
+        author: '',
         category: '',
-        shortDescription: '',
+        short_description: '',
         rating: '',
-        bookContent: '', 
+        book_content: '',
     });
 
     const handleChange = (e) => {
@@ -27,12 +27,25 @@ const AddBook = () => {
             image: '',
             name: '',
             quantity: '',
-            authorName: '',
+            author: '',
             category: '',
-            shortDescription: '',
+            short_description: '',
             rating: '',
-            bookContent: '',
+            book_content: '',
         });
+        console.log(bookDetails)
+
+        fetch('http://localhost:5000/allBooks', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(bookDetails)
+        })
+            .then(res => res.json())
+            .then(data =>
+                console.log(data)
+            )
     };
 
     return (
@@ -94,9 +107,9 @@ const AddBook = () => {
                     </label>
                     <input
                         type="text"
-                        id="authorName"
-                        name="authorName"
-                        value={bookDetails.authorName}
+                        id="author"
+                        name="author"
+                        value={bookDetails.author}
                         onChange={handleChange}
                         className="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
                         placeholder="Enter author's name"
@@ -130,9 +143,9 @@ const AddBook = () => {
                         Short Description
                     </label>
                     <textarea
-                        id="shortDescription"
-                        name="shortDescription"
-                        value={bookDetails.shortDescription}
+                        id="short_description"
+                        name="short_description"
+                        value={bookDetails.short_description}
                         onChange={handleChange}
                         className="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
                         placeholder="Write a brief description of the book"
@@ -163,9 +176,9 @@ const AddBook = () => {
                         Book Content
                     </label>
                     <textarea
-                        id="bookContent"
-                        name="bookContent"
-                        value={bookDetails.bookContent}
+                        id="book_content"
+                        name="book_content"
+                        value={bookDetails.book_content}
                         onChange={handleChange}
                         className="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
                         placeholder="Enter detailed book content"
@@ -182,7 +195,7 @@ const AddBook = () => {
                 </button>
             </form>
 
-            
+
         </div>
     );
 };

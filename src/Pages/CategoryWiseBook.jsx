@@ -45,7 +45,7 @@ const CategoryWiseBook = () => {
                             <span className="ml-1 text-gray-500">({book.rating}/5)</span>
                         </div>
                         <p className="text-sm text-gray-700 mt-2">{book.short_description}</p>
-                        <Link to={`/bookdetails/${book.book_id}`}>
+                        <Link to={`/allBooks/${book._id}`}>
                             <button
                                 className="mt-4 py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300"
                             >
