@@ -34,6 +34,7 @@ const AllBooks = () => {
                             <h3 className="text-xl font-semibold text-gray-800">{book.title}</h3>
                             <p className="text-sm text-gray-600">{book.author}</p>
                             <p className="text-sm text-gray-500 italic">{book.category}</p>
+                            <p className="text-sm text-gray-600">Quantity: {book.quantity}</p>
                             <div className="flex items-center mt-2">
                                 <span className="text-yellow-400">{'★'.repeat(book.rating)}</span>
                                 <span className="ml-1 text-gray-500">({book.rating}/5)</span>

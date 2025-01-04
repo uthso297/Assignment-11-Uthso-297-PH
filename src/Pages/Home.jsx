@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Carousel from "../Components/Carousel";
-import { Link } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../Components/AuthProvider";
 
 const Home = () => {
 
@@ -8,7 +9,14 @@ const Home = () => {
     const [books, setBooks] = useState([]);
     const [loading, setLoading] = useState(true);
 
+    const { setCat } = useContext(AuthContext)
+    const navigate = useNavigate();
+    const location = useLocation();
+    console.log(location.search)
     useEffect(() => {
+        if (location.search) {
+            navigate("/", { replace: true });
+        }
         setTimeout(() => {
             fetch('Books.json')
                 .then(res => res.json())
@@ -26,6 +34,11 @@ const Home = () => {
             setCategories(uniqueCategory);
         }
     }, [books]);
+
+    const handleCat = (category) => {
+        setCat(category);
+        navigate(`/categorywiseBook?category=${category}`)
+    }
 
     return (
         <div>
@@ -46,9 +59,10 @@ const Home = () => {
                             categories.map((category, index) => (
                                 <div
                                     key={index}
-                                    className="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-200"
+                                    onClick={() => handleCat(category)}
+                                    className=" p-4 hover:shadow-xl duration-200 inline-block px-3 py-2 rounded-lg transform transition bg-indigo-500 hover:bg-indigo-400 hover:-translate-y-0.5 focus:ring-indigo-500 focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-indigo-600 uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base cursor-pointer"
                                 >
-                                    <Link className=""><button className="text-xl font-semibold">{category}</button></Link>
+                                    <button className="text-xl font-semibold">{category}</button>
                                 </div>
                             ))
                         ) : (

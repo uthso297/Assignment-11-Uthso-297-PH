@@ -13,6 +13,7 @@ import PrivateRoute from './Components/PrivateRoute';
 import LoginPage from './Pages/LogInPage';
 import Register from './Pages/Register';
 import AuthProvider from './Components/AuthProvider';
+import CategoryWiseBook from './Pages/CategoryWiseBook';
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: 'register',
         element: <Register></Register>
+      },
+      {
+        path: 'categorywiseBook',
+        element: <CategoryWiseBook></CategoryWiseBook>
       }
     ]
   },
