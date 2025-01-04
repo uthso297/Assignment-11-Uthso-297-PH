@@ -10,6 +10,8 @@ import Root from './Root/Root';
 import AllBooks from './Pages/AllBooks';
 import AddBook from './Pages/AddBook';
 import PrivateRoute from './Components/PrivateRoute';
+import LoginPage from './Pages/LogInPage';
+import Register from './Pages/Register';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +29,14 @@ const router = createBrowserRouter([
       {
         path: 'addBook',
         element: <PrivateRoute><AddBook></AddBook></PrivateRoute>
+      },
+      {
+        path: 'login',
+        element: <LoginPage></LoginPage>
+      },
+      {
+        path: 'register',
+        element: <Register></Register>
       }
     ]
   },
