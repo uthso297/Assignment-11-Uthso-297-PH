@@ -1,0 +1,222 @@
+[
+    {
+        "book_id": 1,
+        "image": "https://i.ibb.co.com/zJfHLCR/slider1.webp",
+        "title": "The Silent Forest",
+        "quantity": 10,
+        "author": "John Doe",
+        "category": "Novel",
+        "short_description": "A tale of love and loss in a forgotten town.",
+        "rating": 4,
+        "book_content": "Set in a remote, forgotten town surrounded by dense woods, 'The Silent Forest' follows the story of Emily and Thomas, two childhood friends who are drawn back to their hometown after years of separation. Emily returns after the death of her mother, while Thomas, now a successful artist, is grappling with the aftermath of a failed relationship. As they reconnect, they uncover long-buried secrets that reveal the true, haunting history of their town. Their emotional journey delves into themes of love, loss, forgiveness, and the unspoken ties that bind people to their roots. The haunting atmosphere of the forest reflects the ghosts of the past that neither Emily nor Thomas can escape."
+    },
+    {
+        "book_id": 2,
+        "image": "https://i.ibb.co.com/zJfHLCR/slider1.webp",
+        "title": "The Last Hunt",
+        "quantity": 15,
+        "author": "Jane Smith",
+        "category": "Thriller",
+        "short_description": "A race against time to stop a deadly serial killer.",
+        "rating": 5,
+        "book_content": "'The Last Hunt' follows Detective Olivia Hall as she hunts down a deadly serial killer known only as 'The Hunter'. This killer leaves cryptic clues at the scenes of his crimes, each more twisted than the last. As Olivia races against the clock to prevent another murder, she must confront her own past, including a tragic event that changed her life forever. As the investigation progresses, Olivia teams up with a brilliant profiler, and they uncover a web of psychological manipulation, dark secrets, and unexpected connections. This high-stakes thriller is a fast-paced journey through a labyrinth of clues, deception, and the chilling psychology of a killer who seems to be always one step ahead."
+    },
+    {
+        "book_id": 3,
+        "image": "https://i.ibb.co.com/zJfHLCR/slider1.webp",
+        "title": "Ancient Rome: A History",
+        "quantity": 8,
+        "author": "Richard White",
+        "category": "History",
+        "short_description": "A deep dive into the rise and fall of the Roman Empire.",
+        "rating": 4,
+        "book_content": "In 'Ancient Rome: A History', Richard White provides an exhaustive and insightful analysis of one of the most influential civilizations in human history. Spanning from the legendary founding of Rome in 753 BCE to the collapse of the Western Roman Empire in 476 CE, this book examines the political, social, military, and cultural forces that shaped Rome. White explores the intricacies of Roman politics, including the rise of figures like Julius Caesar and Augustus, and the expansion of the empire that stretched from Britain to Mesopotamia. The book also delves into the day-to-day life of Romans, the complexities of their legal system, the rise of Christianity, and the factors that led to the eventual decline of the empire. This is a comprehensive resource for anyone interested in the dynamics of one of the greatest civilizations in history."
+    },
+    {
+        "book_id": 4,
+        "image": "https://example.com/images/book4.jpg",
+        "title": "Galactic Odyssey",
+        "quantity": 20,
+        "author": "Alex Young",
+        "category": "Sci-Fi",
+        "short_description": "An interstellar journey to the farthest reaches of the galaxy.",
+        "rating": 5,
+        "book_content": "'Galactic Odyssey' is a thrilling, action-packed science fiction epic that follows Captain Aria Lee and her diverse crew as they embark on an unprecedented journey across the galaxy. The crew, aboard the starship *Odyssey*, must explore uncharted regions of space to discover new worlds, encounter alien civilizations, and solve mysteries that could change the fate of the galaxy. As they travel farther from home, they encounter dangerous cosmic phenomena, ancient alien artifacts, and a mysterious signal that could hold the key to the survival of the universe. However, they soon realize that they are not the only ones seeking the answers hidden within the stars. The tension between the crew and rival factions escalates, leading to a dramatic conflict that will test their loyalty and their very survival. With rich world-building, complex characters, and thrilling space adventures, 'Galactic Odyssey' is an unforgettable journey into the unknown."
+    },
+    {
+        "book_id": 5,
+        "image": "https://example.com/images/book5.jpg",
+        "title": "Echoes of the Past",
+        "quantity": 5,
+        "author": "Michael Lee",
+        "category": "Novel",
+        "short_description": "A story about the lingering echoes of history on the present.",
+        "rating": 3,
+        "book_content": "In 'Echoes of the Past', Lily, a young woman in her twenties, uncovers her family's hidden history when she inherits an old house from a distant relative. As she explores the house and its contents, she finds journals, letters, and artifacts that reveal a past filled with hardship, love, and loss. The story weaves between Lily's present-day life and the lives of her ancestors, particularly a mysterious ancestor who lived through a significant historical event that changed the course of the family’s fate. As Lily unravels the secrets of her lineage, she begins to understand how the echoes of these past experiences shape her own decisions and relationships. The novel explores themes of history’s impact on identity, the interconnectedness of generations, and the ways in which the past influences the present, even in the most unexpected of ways."
+    },
+    {
+        "book_id": 6,
+        "image": "https://example.com/images/book6.jpg",
+        "title": "The Shadow Files",
+        "quantity": 12,
+        "author": "Catherine Moore",
+        "category": "Thriller",
+        "short_description": "A high-stakes battle against a government conspiracy.",
+        "rating": 4,
+        "book_content": "'The Shadow Files' is a pulse-pounding thriller that follows former CIA operative Rachel Storm as she uncovers a deadly conspiracy within the highest levels of government. When she is contacted by a mysterious whistleblower, Rachel is thrust back into the world she left behind, one filled with covert operations, shadowy figures, and a network of lies. As Rachel digs deeper into the conspiracy, she uncovers evidence of a secret government program that manipulates global events to maintain power. With her life at risk, Rachel must navigate a treacherous landscape filled with double-crosses, hidden agendas, and dangerous allies. The story is a rollercoaster ride of intrigue and suspense, with each revelation pushing Rachel closer to the heart of a conspiracy that could change the world forever."
+    },
+    {
+        "book_id": 7,
+        "image": "https://example.com/images/book7.jpg",
+        "title": "The Age of Exploration",
+        "quantity": 7,
+        "author": "Emily Johnson",
+        "category": "History",
+        "short_description": "A detailed account of the exploration of the new world.",
+        "rating": 4,
+        "book_content": "In 'The Age of Exploration', Emily Johnson chronicles the remarkable voyages of history’s most daring explorers, from Christopher Columbus and Vasco da Gama to Ferdinand Magellan and John Cabot. This book not only recounts the famous expeditions that led to the discovery of new lands but also examines the profound consequences these explorations had on both the explorers and the indigenous populations they encountered. Johnson delves into the motivations behind these explorations, including the search for wealth, religious expansion, and the pursuit of knowledge. She also discusses the challenges faced by explorers, such as hostile environments, unknown diseases, and treacherous seas. The book offers a comprehensive look at the impact of the Age of Exploration on the course of history, from the rise of European colonial empires to the reshaping of world trade routes."
+    },
+    {
+        "book_id": 8,
+        "image": "https://example.com/images/book8.jpg",
+        "title": "The Andromeda Protocol",
+        "quantity": 30,
+        "author": "David Carter",
+        "category": "Sci-Fi",
+        "short_description": "A secret mission to prevent a galactic catastrophe.",
+        "rating": 5,
+        "book_content": "'The Andromeda Protocol' follows a team of top scientists and military experts who are assembled to investigate an alien signal coming from the Andromeda galaxy. This signal, once decoded, reveals a terrifying message: an impending galactic catastrophe that threatens not only Earth but the entire Milky Way. The team races against time to prevent this disaster, traveling across space to confront alien civilizations, gather resources, and uncover the truth behind the message. Along the way, they encounter dangerous new species, navigate intergalactic politics, and discover a powerful alien technology that could either save or destroy all life in the galaxy. As the mission grows more perilous, the line between allies and enemies becomes blurred, and the crew must make impossible choices to secure humanity's future. With high-stakes action and complex moral dilemmas, 'The Andromeda Protocol' is a captivating journey into the unknown."
+    },
+    {
+        "book_id": 9,
+        "image": "https://example.com/images/book9.jpg",
+        "title": "The Road to Redemption",
+        "quantity": 25,
+        "author": "Anna Davis",
+        "category": "Novel",
+        "short_description": "A gripping tale of personal redemption and self-discovery.",
+        "rating": 3,
+        "book_content": "In 'The Road to Redemption', protagonist Claire Douglas returns to her small hometown after a decade-long absence. She is haunted by the choices she made in her youth, which led to the loss of her family and the destruction of her career. As Claire reconnects with old friends and family members, she begins to face the consequences of her past decisions. Throughout the novel, Claire's journey is one of self-discovery and forgiveness, as she works to reconcile the person she used to be with the person she is becoming. Along the way, she finds unexpected allies, including a new love interest and a wise mentor who helps her heal. The novel explores the themes of regret, redemption, and the difficult but necessary process of coming to terms with one’s past in order to build a better future."
+    },
+    {
+        "book_id": 10,
+        "image": "https://example.com/images/book10.jpg",
+        "title": "Hunt for the Assassin",
+        "quantity": 50,
+        "author": "Samuel Black",
+        "category": "Thriller",
+        "short_description": "A deadly game of cat and mouse with a top-tier assassin.",
+        "rating": 4,
+        "book_content": "'Hunt for the Assassin' follows FBI agent Jack Monroe as he investigates a series of high-profile murders that all seem connected to an elusive assassin known only as 'The Ghost.' Monroe is forced to partner with a former hitman, Nick Alvarado, who once worked for the assassin’s organization. Together, they must track down The Ghost before he eliminates their only lead. As the investigation progresses, Monroe and Alvarado discover that The Ghost has been orchestrating a far more elaborate scheme—one that threatens to destabilize governments around the world. With breathtaking action, tense standoffs, and a plot full of twists and turns, 'Hunt for the Assassin' keeps readers on the edge of their seats, never knowing who will make it out alive."
+    },
+    {
+        "book_id": 11,
+        "image": "https://example.com/images/book11.jpg",
+        "title": "The Egyptian Pharaohs",
+        "quantity": 3,
+        "author": "Susan White",
+        "category": "History",
+        "short_description": "A deep look into the rulers of ancient Egypt.",
+        "rating": 5,
+        "book_content": "'The Egyptian Pharaohs' offers an in-depth examination of the rulers of ancient Egypt, focusing on the powerful dynasties that shaped the civilization's history. Susan White provides an extensive account of the most notable pharaohs, including Tutankhamun, Ramses II, and Cleopatra, detailing their reigns, achievements, and the political and cultural climates of their times. The book delves into the role of the pharaohs as both political leaders and divine figures, offering insights into their religious significance and the rituals that were central to their rule. White also explores the architectural and artistic contributions of these rulers, including the construction of the pyramids, temples, and tombs that have left an indelible mark on world history. This comprehensive study provides readers with a rich understanding of Egypt's remarkable legacy and the leadership that sustained one of the greatest empires in antiquity."
+    },
+    {
+        "book_id": 12,
+        "image": "https://example.com/images/book12.jpg",
+        "title": "Time Machine",
+        "quantity": 18,
+        "author": "H.G. Wells",
+        "category": "Sci-Fi",
+        "short_description": "A classic tale of time travel and the exploration of future societies.",
+        "rating": 5,
+        "book_content": "'Time Machine' is one of the seminal works of science fiction, in which the protagonist, known only as the Time Traveler, constructs a machine capable of traveling through time. The story follows the Time Traveler as he journeys far into the future, where he discovers a divided world populated by two distinct species: the Eloi, a peaceful and docile people, and the Morlocks, who live underground and prey upon the Eloi. The Time Traveler quickly realizes that his journey through time has revealed the eventual fate of humanity, one marked by decay and degeneration. Through vivid descriptions of future societies, Wells explores the consequences of class division, technological advancement, and the fragility of civilization. The novel is both a thrilling adventure and a profound meditation on the nature of progress and the inevitable passage of time."
+    },
+    {
+        "book_id": 13,
+        "image": "https://example.com/images/book13.jpg",
+        "title": "The Secret Garden",
+        "quantity": 25,
+        "author": "Frances Hodgson Burnett",
+        "category": "Novel",
+        "short_description": "A timeless story of friendship and personal growth.",
+        "rating": 4,
+        "book_content": "'The Secret Garden' is a heartwarming tale of transformation and friendship. It follows the story of Mary Lennox, a lonely, spoiled girl who is sent to live with her reclusive uncle in a large, neglected mansion. While exploring the estate, Mary discovers a hidden, overgrown garden that has been locked away for years. With the help of a local boy, Dickon, and her cousin, Colin, Mary gradually brings the garden back to life. As the garden flourishes, so do the characters, who each experience emotional and physical healing. The novel explores themes of the healing power of nature, the importance of friendship, and the potential for personal growth when given the opportunity to change."
+    },
+    {
+        "book_id": 14,
+        "image": "https://example.com/images/book14.jpg",
+        "title": "Codebreaker",
+        "quantity": 10,
+        "author": "John R. Moore",
+        "category": "Thriller",
+        "short_description": "A story of espionage and breaking an unbreakable code.",
+        "rating": 4,
+        "book_content": "'Codebreaker' is a fast-paced thriller set in the high-stakes world of espionage and cryptography. The story follows Anna Riley, a brilliant mathematician and cryptographer, who is recruited by a secret government agency to break a highly complex, seemingly unbreakable code. As Anna gets closer to deciphering the code, she realizes that it holds the key to uncovering a dangerous conspiracy that could threaten national security. With time running out, Anna must navigate the perilous world of intelligence agencies, counterintelligence, and a shadowy figure known only as 'The Architect.' The tension builds as Anna uncovers the true identity of the people behind the code and races to stop a catastrophic event from occurring."
+    },
+    {
+        "book_id": 15,
+        "image": "https://example.com/images/book15.jpg",
+        "title": "The Great Depression",
+        "quantity": 5,
+        "author": "Alice Turner",
+        "category": "History",
+        "short_description": "An analysis of one of the darkest periods in world history.",
+        "rating": 5,
+        "book_content": "'The Great Depression' offers an insightful and comprehensive look at one of the most devastating economic crises in modern history. Alice Turner examines the causes of the Depression, including the stock market crash of 1929, the banking system collapse, and the widespread poverty that followed. The book details the social, political, and economic impact of the Depression on individuals, families, and nations, as well as the efforts of governments to address the crisis. Turner explores the role of key figures like Franklin D. Roosevelt and the New Deal, as well as the rise of extremist movements in Europe. Through a careful analysis of primary sources and personal stories, Turner paints a vivid picture of the hardships faced by millions of people during this bleak period."
+    },
+    {
+        "book_id": 16,
+        "image": "https://example.com/images/book16.jpg",
+        "title": "Rogue Planet",
+        "quantity": 13,
+        "author": "Samuel R. Hart",
+        "category": "Sci-Fi",
+        "short_description": "A rogue planet on a collision course with Earth.",
+        "rating": 4,
+        "book_content": "'Rogue Planet' is a gripping sci-fi thriller that follows a team of astronauts who are sent on a mission to prevent a rogue planet from colliding with Earth. As they race against time, they must navigate the dangers of deep space, confront internal tensions within their team, and develop a plan to avert the impending catastrophe. Along the way, they make groundbreaking scientific discoveries about the rogue planet’s origins and the forces that have driven it toward the solar system. The novel explores themes of sacrifice, survival, and the limits of human ingenuity in the face of an existential threat."
+    },
+    {
+        "book_id": 17,
+        "image": "https://example.com/images/book17.jpg",
+        "title": "Unbroken Dreams",
+        "quantity": 30,
+        "author": "Sandra Lee",
+        "category": "Novel",
+        "short_description": "A journey through hardship, hope, and self-empowerment.",
+        "rating": 4,
+        "book_content": "'Unbroken Dreams' is a powerful story of resilience and self-discovery. The protagonist, Olivia Greene, has spent her life running from her past and the tragedies that have shaped her. After a devastating loss, Olivia embarks on a journey of self-healing, returning to her childhood home and confronting the painful memories she left behind. Through her journey, she learns to face her fears, rebuild relationships, and ultimately reclaim her dreams. The novel explores themes of forgiveness, personal strength, and the transformative power of hope and perseverance in the face of life's challenges."
+    },
+    {
+        "book_id": 18,
+        "image": "https://example.com/images/book18.jpg",
+        "title": "Dark Matter",
+        "quantity": 22,
+        "author": "Blake Crouch",
+        "category": "Sci-Fi",
+        "short_description": "A mind-bending story of alternate realities and choices.",
+        "rating": 5,
+        "book_content": "'Dark Matter' is a science fiction thriller that explores the idea of alternate realities and the choices that define our lives. Jason Dessen, a physicist, is abducted into an alternate version of his life, where his family is different, his career has taken a different path, and he is faced with the question of what truly matters. As Jason tries to find his way back to his original reality, he is forced to confront the consequences of his decisions and the nature of identity itself. The novel is a fast-paced and thought-provoking exploration of the quantum multiverse, with deep philosophical undertones about the paths we take and the lives we lead."
+    },
+    {
+        "book_id": 19,
+        "image": "https://example.com/images/book19.jpg",
+        "title": "The Widow’s Web",
+        "quantity": 10,
+        "author": "Charlotte Daniels",
+        "category": "Thriller",
+        "short_description": "A chilling investigation into a widow's dark past.",
+        "rating": 4,
+        "book_content": "'The Widow’s Web' is a psychological thriller about a woman who is forced to confront the secrets of her late husband’s life. When detective Kate Monroe is called to investigate the suspicious death of a local businessman, she uncovers evidence suggesting that his widow, Eleanor, may be hiding something. As Kate delves deeper into the case, she discovers that Eleanor’s seemingly perfect life is built on a web of lies, manipulation, and hidden crimes. The suspense builds as the investigation unravels, and Kate must navigate a maze of deceit, betrayal, and unexpected twists to uncover the truth."
+    },
+    {
+        "book_id": 20,
+        "image": "https://example.com/images/book20.jpg",
+        "title": "The Lighthouse Keeper",
+        "quantity": 18,
+        "author": "Isla Cameron",
+        "category": "Novel",
+        "short_description": "A haunting tale of love and loss set in a remote lighthouse.",
+        "rating": 4,
+        "book_content": "'The Lighthouse Keeper' is a poignant and atmospheric novel set on a windswept island off the coast of Scotland. The story follows the life of Thomas, the solitary lighthouse keeper, who has lived alone for years after the death of his wife. When a mysterious stranger arrives on the island seeking refuge, Thomas is forced to confront the pain of his past and the loneliness he has tried to escape. As the stranger becomes a part of his life, Thomas finds himself opening up to the possibility of healing and redemption. The novel explores themes of grief, forgiveness, and the power of human connection in the face of isolation."
+    }
+]

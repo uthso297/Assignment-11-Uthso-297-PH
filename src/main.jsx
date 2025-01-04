@@ -14,6 +14,7 @@ import LoginPage from './Pages/LogInPage';
 import Register from './Pages/Register';
 import AuthProvider from './Components/AuthProvider';
 import CategoryWiseBook from './Pages/CategoryWiseBook';
+import Details from './Pages/Details';
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,11 @@ const router = createBrowserRouter([
       {
         path: 'categorywiseBook',
         element: <CategoryWiseBook></CategoryWiseBook>
+      },
+      {
+        path: 'bookdetails/:id',
+        element: <Details></Details>,
+
       }
     ]
   },

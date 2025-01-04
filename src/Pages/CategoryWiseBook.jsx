@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Components/AuthProvider";
 import Spinner from "../Components/Spinner";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const CategoryWiseBook = () => {
     const { cat } = useContext(AuthContext)
@@ -15,7 +15,7 @@ const CategoryWiseBook = () => {
     const category = urlCategory || cat
     useEffect(() => {
         setTimeout(() => {
-            fetch('Books.json')
+            fetch('Book.json')
                 .then(res => res.json())
                 .then(datas => {
                     const res = datas.filter((data) => data.category === category)
@@ -44,11 +44,13 @@ const CategoryWiseBook = () => {
                             <span className="ml-1 text-gray-500">({book.rating}/5)</span>
                         </div>
                         <p className="text-sm text-gray-700 mt-2">{book.short_description}</p>
-                        <button
-                            className="mt-4 py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300"
-                        >
-                            Details
-                        </button>
+                        <Link to={`/bookdetails/${book.book_id}`}>
+                            <button
+                                className="mt-4 py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300"
+                            >
+                                Details
+                            </button>
+                        </Link>
                     </div>
                 </div>
             ))}
