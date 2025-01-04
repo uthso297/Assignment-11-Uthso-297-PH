@@ -12,6 +12,7 @@ import AddBook from './Pages/AddBook';
 import PrivateRoute from './Components/PrivateRoute';
 import LoginPage from './Pages/LogInPage';
 import Register from './Pages/Register';
+import AuthProvider from './Components/AuthProvider';
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </StrictMode>,
 )

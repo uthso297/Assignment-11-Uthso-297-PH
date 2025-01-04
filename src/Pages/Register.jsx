@@ -1,12 +1,37 @@
+import { useContext } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../Components/AuthProvider";
 
 const Register = () => {
-    const handleRegister = () => {
+    const { createUser, user, setUser, updateUserProfile, handleGoogleLogin } = useContext(AuthContext)
+    console.log(user)
+    const handleRegister = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const photourl = form.photourl.value;
+        const password = form.password.value;
+
+        console.log(name, email, photourl, password);
+
+        createUser(email, password)
+            .then(result => {
+                setUser(result.user)
+                updateUserProfile({ displayName: name, photoURL: photourl })
+                console.log(result.user)
+            })
 
     }
     const handleGoogle = () => {
-
+        handleGoogleLogin()
+            .then(result => {
+                console.log(result.user)
+            })
+            .catch(err => {
+                console.log(err)
+            })
     }
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-100 p-6">

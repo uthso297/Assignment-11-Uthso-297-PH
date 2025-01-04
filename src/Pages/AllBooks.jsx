@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import Spinner from "../Components/Spinner";
+import { useLocation } from "react-router-dom";
 
 const AllBooks = () => {
     const [books, setBooks] = useState([]);
     const [loading, setLoading] = useState(true);
-
+    const location = useLocation();
+    console.log(location)
     useEffect(() => {
         setTimeout(() => {
             fetch('Books.json')

@@ -1,12 +1,37 @@
+import { useContext } from "react";
 import { FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../Components/AuthProvider";
 
 const LogInPage = () => {
-    const handleLogin = () => {
+    const { signInUser, handleGoogleLogin } = useContext(AuthContext)
+    const location = useLocation();
+    const navigate = useNavigate();
+    console.log(location)
+    const handleLogin = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password)
 
+        signInUser(email, password)
+            .then(result => {
+                console.log(result.user)
+                navigate(location.state || '/')
+            })
+            .catch(error => {
+                console.log(error.message)
+            })
     }
     const handleGoogle = () => {
-
+        handleGoogleLogin()
+            .then(result => {
+                console.log(result.user)
+            })
+            .catch(err => {
+                console.log(err)
+            })
     }
     return (
         <div className="min-h-screen bg-gray-100 flex items-center justify-center">
