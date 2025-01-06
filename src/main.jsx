@@ -16,6 +16,7 @@ import AuthProvider from './Components/AuthProvider';
 import CategoryWiseBook from './Pages/CategoryWiseBook';
 import Details from './Pages/Details';
 import Borrowed from './Pages/Borrowed';
+import UpdateBook from './Pages/UpdateBook';
 
 const router = createBrowserRouter([
   {
@@ -55,6 +56,14 @@ const router = createBrowserRouter([
       {
         path: 'borrowed',
         element: <Borrowed></Borrowed>
+      },
+      // {
+      //   path: 'allBooks/update/allBooks/:id',
+      //   element: <UpdateBook></UpdateBook>
+      // }
+      {
+        path: 'allBooks/update/:id',
+        element: <PrivateRoute><UpdateBook></UpdateBook></PrivateRoute>
       }
     ]
   },

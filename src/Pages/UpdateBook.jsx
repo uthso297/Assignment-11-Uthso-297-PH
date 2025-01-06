@@ -1,56 +1,52 @@
-import { useState } from 'react';
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
-const AddBook = () => {
-    const [bookDetails, setBookDetails] = useState({
+const UpdateBook = () => {
+    const params = useParams();
+    const id = (params.id)
+    const [book, setBook] = useState({
         image: '',
         title: '',
-        quantity: '',
+        quantity: 1,
         author: '',
         category: '',
         short_description: '',
-        rating: '',
-        book_content: '',
+        rating: 1,
+        book_content: ''
     });
-
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setBookDetails({
-            ...bookDetails,
-            [name]: value,
-        });
-    };
+    useEffect(() => {
+        fetch(`http://localhost:5000/allBooks/${id}`)
+            .then(res => res.json())
+            .then(data => {
+                setBook(data);
+            })
+    }
+        , [id])
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Book details submitted:', bookDetails);
-        setBookDetails({
-            image: '',
-            title: '',
-            quantity: '',
-            author: '',
-            category: '',
-            short_description: '',
-            rating: '',
-            book_content: '',
-        });
-        console.log(bookDetails)
+        console.log(e)
+        console.log(book)
 
-        fetch('http://localhost:5000/allBooks', {
-            method: 'POST',
+        fetch(`http://localhost:5000/allBooks/${id}`, {
+            method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(bookDetails)
+            body: JSON.stringify(book)
         })
-            .then(res => res.json())
-            .then(data =>
-                console.log(data)
-            )
+    }
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setBook((prevBook) => ({
+            ...prevBook,
+            [name]: value,
+        }));
     };
 
     return (
         <div className="max-w-4xl mx-auto p-8">
-            <h2 className="text-2xl font-bold text-center mb-6">Add New Book</h2>
+            <h2 className="text-2xl font-bold text-center mb-6">Update Book</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                     <label htmlFor="image" className="block text-sm font-medium text-gray-700">
@@ -60,7 +56,7 @@ const AddBook = () => {
                         type="url"
                         id="image"
                         name="image"
-                        value={bookDetails.image}
+                        value={book.image}
                         onChange={handleChange}
                         className="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
                         placeholder="Enter book cover image URL"
@@ -74,9 +70,9 @@ const AddBook = () => {
                     </label>
                     <input
                         type="text"
-                        id="title"
-                        name="title"
-                        value={bookDetails.title}
+                        id="name"
+                        name="name"
+                        value={book.title}
                         onChange={handleChange}
                         className="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
                         placeholder="Enter the book title"
@@ -92,7 +88,7 @@ const AddBook = () => {
                         type="number"
                         id="quantity"
                         name="quantity"
-                        value={bookDetails.quantity}
+                        value={book.quantity}
                         onChange={handleChange}
                         className="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
                         placeholder="Enter quantity"
@@ -109,7 +105,7 @@ const AddBook = () => {
                         type="text"
                         id="author"
                         name="author"
-                        value={bookDetails.author}
+                        value={book.author}
                         onChange={handleChange}
                         className="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
                         placeholder="Enter author's name"
@@ -124,7 +120,7 @@ const AddBook = () => {
                     <select
                         id="category"
                         name="category"
-                        value={bookDetails.category}
+                        value={book.category}
                         onChange={handleChange}
                         className="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
                         required
@@ -145,7 +141,7 @@ const AddBook = () => {
                     <textarea
                         id="short_description"
                         name="short_description"
-                        value={bookDetails.short_description}
+                        value={book.short_description}
                         onChange={handleChange}
                         className="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
                         placeholder="Write a brief description of the book"
@@ -162,7 +158,7 @@ const AddBook = () => {
                         type="number"
                         id="rating"
                         name="rating"
-                        value={bookDetails.rating}
+                        value={book.rating}
                         onChange={handleChange}
                         className="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
                         min="1"
@@ -178,7 +174,7 @@ const AddBook = () => {
                     <textarea
                         id="book_content"
                         name="book_content"
-                        value={bookDetails.book_content}
+                        value={book.book_content}
                         onChange={handleChange}
                         className="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
                         placeholder="Enter detailed book content"
@@ -191,7 +187,7 @@ const AddBook = () => {
                     type="submit"
                     className="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 focus:ring-2 focus:ring-indigo-500"
                 >
-                    Add Book
+                    Update
                 </button>
             </form>
 
@@ -200,4 +196,4 @@ const AddBook = () => {
     );
 };
 
-export default AddBook;
+export default UpdateBook;

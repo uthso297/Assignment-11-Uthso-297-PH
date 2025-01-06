@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import Spinner from "../Components/Spinner";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const AllBooks = () => {
     const [books, setBooks] = useState([]);
     const [loading, setLoading] = useState(true);
     const location = useLocation();
+    const navigate = useNavigate();
     console.log(location)
     useEffect(() => {
         setTimeout(() => {
@@ -22,6 +23,8 @@ const AllBooks = () => {
 
     const handleUpdateClick = (book) => {
         console.log("Updating book:", book);
+
+        navigate(`update/${book._id}`);
     };
 
     if (loading) {
@@ -31,7 +34,7 @@ const AllBooks = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-4 py-4">
                 {books.map((book, index) => (
                     <div key={index} className="bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transform hover:scale-105 transition duration-300">
-                        <img className="w-full h-48 object-cover" src={book.image} alt={book.title} />
+                        <img className="w-full h-48" src={book.image} alt={book.title} />
                         <div className="p-4">
                             <h3 className="text-xl font-semibold text-gray-800">{book.title}</h3>
                             <p className="text-sm text-gray-600">{book.author}</p>
