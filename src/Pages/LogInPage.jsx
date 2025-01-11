@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Components/AuthProvider";
+import PageTitle from "../Components/PageTitle";
 
 const LogInPage = () => {
     const { signInUser, handleGoogleLogin } = useContext(AuthContext)
@@ -36,6 +37,8 @@ const LogInPage = () => {
     }
     return (
         <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+            <PageTitle title="Book Matrix || Login"></PageTitle>
+
             <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
                 <h2 className="text-3xl font-semibold text-center text-gray-800 mb-6">Login</h2>
                 <form onSubmit={handleLogin}>

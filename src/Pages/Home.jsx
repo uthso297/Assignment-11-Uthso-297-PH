@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import Carousel from "../Components/Carousel";
 import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Components/AuthProvider";
+import PageTitle from "../Components/PageTitle";
 
 const Home = () => {
 
@@ -43,6 +44,7 @@ const Home = () => {
 
     return (
         <div>
+            <PageTitle title="Home||Book Matrix"></PageTitle>
             {/* banner section */}
             <Carousel></Carousel>
             {/* categories section */}

@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import Spinner from "../Components/Spinner";
 import { useNavigate } from "react-router-dom";
+import PageTitle from "../Components/PageTitle";
 
 const AllBooks = () => {
     const [books, setBooks] = useState([]);
     const [loading, setLoading] = useState(true);
     const [showAvailable, setShowAvailable] = useState(false);
-    const [viewMode, setViewMode] = useState("card"); 
+    const [viewMode, setViewMode] = useState("card");
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -33,6 +34,8 @@ const AllBooks = () => {
     } else {
         return (
             <div className="px-4 py-4">
+                <PageTitle title="Book Matrix || All Books"></PageTitle>
+
                 {/* Toggle View Dropdown */}
                 <div className="mb-4 flex items-center space-x-4">
                     <button

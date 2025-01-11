@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Components/AuthProvider";
+import PageTitle from "../Components/PageTitle";
 
 const Register = () => {
     const { createUser, setUser, updateUserProfile, handleGoogleLogin } = useContext(AuthContext);
@@ -59,6 +60,8 @@ const Register = () => {
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-100 p-6">
+            <PageTitle title="Book Matrix || Register"></PageTitle>
+
             <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg">
                 <h2 className="text-3xl font-bold text-center text-indigo-700 mb-6">Register for Our App</h2>
                 <form onSubmit={handleRegister} className="space-y-6">

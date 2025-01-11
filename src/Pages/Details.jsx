@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import Spinner from "../Components/Spinner";
 import { useContext } from "react";
 import { AuthContext } from "../Components/AuthProvider";
+import PageTitle from "../Components/PageTitle";
 
 const Details = () => {
     const book = useLoaderData();
@@ -110,6 +111,8 @@ const Details = () => {
     }
     return (
         <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4 py-8">
+            <PageTitle title="Book Matrix || Details"></PageTitle>
+
             <div className="bg-white shadow-lg rounded-lg max-w-3xl w-full overflow-hidden">
                 <div className="relative">
                     <img

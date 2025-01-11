@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Components/AuthProvider";
+import PageTitle from "../Components/PageTitle";
 
 const Borrowed = () => {
     const [books, setBooks] = useState([])
@@ -47,9 +48,8 @@ const Borrowed = () => {
     return (
         <div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-4 py-4">
-                {/* {
-                    books.length
-                } */}
+                <PageTitle title="Book Matrix || Borrowed Book"></PageTitle>
+
                 {books.map((book, index) => (
                     <div key={index} className="bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transform hover:scale-105 transition duration-300">
                         <img className="w-full h-48" src={book.image} alt={book.title} />
