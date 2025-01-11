@@ -6,7 +6,7 @@ const AllBooks = () => {
     const [books, setBooks] = useState([]);
     const [loading, setLoading] = useState(true);
     const [showAvailable, setShowAvailable] = useState(false);
-    const [viewMode, setViewMode] = useState("card"); // New state to track view mode
+    const [viewMode, setViewMode] = useState("card"); 
     const navigate = useNavigate();
 
     useEffect(() => {
