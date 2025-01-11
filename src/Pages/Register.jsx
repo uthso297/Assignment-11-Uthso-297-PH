@@ -1,12 +1,21 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Components/AuthProvider";
 
 const Register = () => {
-    const { createUser, user, setUser, updateUserProfile, handleGoogleLogin } = useContext(AuthContext)
+    const { createUser, setUser, updateUserProfile, handleGoogleLogin } = useContext(AuthContext);
     const navigate = useNavigate();
-    console.log(user)
+    const [passwordError, setPasswordError] = useState("");
+
+    const validatePassword = (password) => {
+        const isValid =
+            password.length >= 6 &&
+            /[a-z]/.test(password) &&
+            /[A-Z]/.test(password);
+        return isValid;
+    };
+
     const handleRegister = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -15,28 +24,39 @@ const Register = () => {
         const photourl = form.photourl.value;
         const password = form.password.value;
 
+        // Validate password
+        if (!validatePassword(password)) {
+            setPasswordError("Password must be at least 6 characters long and contain both uppercase and lowercase letters.");
+            return;
+        }
+
+        setPasswordError("");
+
         console.log(name, email, photourl, password);
 
         createUser(email, password)
             .then(result => {
-                setUser(result.user)
-                updateUserProfile({ displayName: name, photoURL: photourl })
+                setUser(result.user);
+                updateUserProfile({ displayName: name, photoURL: photourl });
                 navigate('/');
-                console.log(result.user)
+                console.log(result.user);
             })
+            .catch(err => {
+                console.log(err);
+            });
+    };
 
-    }
     const handleGoogle = () => {
         handleGoogleLogin()
             .then(result => {
-                console.log(result.user)
+                console.log(result.user);
                 navigate('/');
-
             })
             .catch(err => {
-                console.log(err)
-            })
-    }
+                console.log(err);
+            });
+    };
+
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-100 p-6">
             <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg">
@@ -93,9 +113,9 @@ const Register = () => {
                             className="w-full p-3 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                         />
                         {/* Show error message if password is invalid */}
-                        {/* {passwordError && (
+                        {passwordError && (
                             <p className="text-red-500 text-sm mt-2">{passwordError}</p>
-                        )} */}
+                        )}
                     </div>
 
                     {/* Register Button */}
