@@ -12,8 +12,8 @@ const Details = () => {
     const [updatedBook, setUpdatedBook] = useState(book);
     const [modal, setModal] = useState(false);
     const [match, setMatch] = useState(false);
-    const [imageLinks, setImageLinks] = useState([]);
-  
+    const [bids, setBids] = useState([]);
+
     const handleCloseModal = () => {
         setModal(false);
     }
@@ -30,21 +30,21 @@ const Details = () => {
         fetch(`http://localhost:5000/borrow?email=${email}`)
             .then(res => res.json())
             .then(data => {
-                const images = data.map(item => item.image);
-                setImageLinks(images);
+                const ids = data.map(item => item._id);
+                setBids(ids);
             })
     }, [email])
 
-    console.log(imageLinks)
+    console.log(bids)
 
 
     useEffect(() => {
-        if (imageLinks.includes(updatedBook.image)) {
+        if (bids.includes(updatedBook._id)) {
             setMatch(true);
         } else {
             setMatch(false);
         }
-    }, [imageLinks, updatedBook.image]);
+    }, [bids, updatedBook._id]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -85,7 +85,7 @@ const Details = () => {
                 .then(res => res.json())
                 .then(data => {
                     console.log(data)
-                    fetch('http://localhost:5000/borrow', {
+                    fetch(`http://localhost:5000/borrow/${id}`, {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'

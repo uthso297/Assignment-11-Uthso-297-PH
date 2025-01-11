@@ -55,12 +55,8 @@ const router = createBrowserRouter([
       },
       {
         path: 'borrowed',
-        element: <Borrowed></Borrowed>
+        element: <PrivateRoute><Borrowed></Borrowed></PrivateRoute>
       },
-      // {
-      //   path: 'allBooks/update/allBooks/:id',
-      //   element: <UpdateBook></UpdateBook>
-      // }
       {
         path: 'allBooks/update/:id',
         element: <PrivateRoute><UpdateBook></UpdateBook></PrivateRoute>
