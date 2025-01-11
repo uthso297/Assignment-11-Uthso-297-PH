@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import { FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Components/AuthProvider";
 
 const Register = () => {
     const { createUser, user, setUser, updateUserProfile, handleGoogleLogin } = useContext(AuthContext)
+    const navigate = useNavigate();
     console.log(user)
     const handleRegister = (e) => {
         e.preventDefault();
@@ -20,6 +21,7 @@ const Register = () => {
             .then(result => {
                 setUser(result.user)
                 updateUserProfile({ displayName: name, photoURL: photourl })
+                navigate('/');
                 console.log(result.user)
             })
 
@@ -28,6 +30,8 @@ const Register = () => {
         handleGoogleLogin()
             .then(result => {
                 console.log(result.user)
+                navigate('/');
+
             })
             .catch(err => {
                 console.log(err)

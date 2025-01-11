@@ -28,6 +28,7 @@ const LogInPage = () => {
         handleGoogleLogin()
             .then(result => {
                 console.log(result.user)
+                navigate(location.state || '/')
             })
             .catch(err => {
                 console.log(err)
