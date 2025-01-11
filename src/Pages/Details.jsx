@@ -133,7 +133,7 @@ const Details = () => {
                     </div>
 
                     <div className="mt-4">
-                        <button onClick={() => handleBorrow(updatedBook._id)} className="w-full py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                        <button disabled={updatedBook.quantity <= 0} onClick={() => handleBorrow(updatedBook._id)} className="w-full py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300">
                             Borrow
                         </button>
                     </div>

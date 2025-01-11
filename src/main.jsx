@@ -17,11 +17,13 @@ import CategoryWiseBook from './Pages/CategoryWiseBook';
 import Details from './Pages/Details';
 import Borrowed from './Pages/Borrowed';
 import UpdateBook from './Pages/UpdateBook';
+import ErrorPages from './Components/ErrorPages';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorPages></ErrorPages>,
     children: [
       {
         path: "/",
