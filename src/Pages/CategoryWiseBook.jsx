@@ -16,8 +16,8 @@ const CategoryWiseBook = () => {
     const category = urlCategory || cat
     useEffect(() => {
         setTimeout(() => {
-            fetch('http://localhost:5000/allBooks')
-                // fetch('http://localhost:5000/allBooks')
+            fetch('https://library-management-system-server-delta.vercel.app/allBooks')
+                // fetch('https://library-management-system-server-delta.vercel.app/allBooks')
                 .then(res => res.json())
                 .then(datas => {
                     const res = datas.filter((data) => data.category === category)

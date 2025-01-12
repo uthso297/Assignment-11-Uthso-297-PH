@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import PageTitle from "../Components/PageTitle";
+import Swal from "sweetalert2";
 
 const UpdateBook = () => {
     const params = useParams();
@@ -16,7 +17,7 @@ const UpdateBook = () => {
         book_content: ''
     });
     useEffect(() => {
-        fetch(`https://library-management-system-server-delta.vercel.app/${id}`)
+        fetch(`https://library-management-system-server-delta.vercel.app/allBooks/${id}`)
             .then(res => res.json())
             .then(data => {
                 setBook(data);
@@ -29,13 +30,26 @@ const UpdateBook = () => {
         // console.log(e)
         // console.log(book)
 
-        fetch(`https://library-management-system-server-delta.vercel.app/${id}`, {
+        fetch(`https://library-management-system-server-delta.vercel.app/allBooks/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(book)
         })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount >= 1) {
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Updated book successfully",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
+            })
     }
     const handleChange = (e) => {
         const { name, value } = e.target;

@@ -12,7 +12,7 @@ const AllBooks = () => {
 
     useEffect(() => {
         setTimeout(() => {
-            fetch('http://localhost:5000/allBooks')
+            fetch('https://library-management-system-server-delta.vercel.app/allBooks')
                 .then(res => res.json())
                 .then(data => {
                     setBooks(data);

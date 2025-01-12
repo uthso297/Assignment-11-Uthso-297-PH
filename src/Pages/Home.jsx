@@ -19,8 +19,8 @@ const Home = () => {
             navigate("/", { replace: true });
         }
         setTimeout(() => {
-            fetch('http://localhost:5000/allBooks')
-                // fetch('http://localhost:5000/allBooks')
+            fetch('https://library-management-system-server-delta.vercel.app/allBooks')
+                // fetch('https://library-management-system-server-delta.vercel.app/allBooks')
                 .then(res => res.json())
                 .then(data => {
                     setBooks(data);

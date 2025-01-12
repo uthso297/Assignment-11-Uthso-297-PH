@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { AuthContext } from "../Components/AuthProvider";
 import PageTitle from "../Components/PageTitle";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const Details = () => {
     const book = useLoaderData();
@@ -29,14 +30,14 @@ const Details = () => {
     }
 
     useEffect(() => {
-        // fetch(`http://localhost:5000/borrow?email=${email}`)
+        // fetch(`https://library-management-system-server-delta.vercel.app/borrow?email=${email}`)
         //     .then(res => res.json())
         //     .then(data => {
         //         const ids = data.map(item => item._id);
         //         setBids(ids);
         //     })
 
-        axios.get(`http://localhost:5000/borrow?email=${email}`, {
+        axios.get(`https://library-management-system-server-delta.vercel.app/borrow?email=${email}`, {
             withCredentials: true
         })
             .then(res => {
@@ -83,7 +84,7 @@ const Details = () => {
             return
         }
         else {
-            fetch(`https://library-management-system-server-delta.vercel.app/${id}/borrow`, {
+            fetch(`https://library-management-system-server-delta.vercel.app/allBooks/${id}/borrow`, {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -92,7 +93,7 @@ const Details = () => {
                 .then(res => res.json())
                 .then(data => {
                     console.log(data)
-                    fetch(`http://localhost:5000/borrow`, {
+                    fetch(`https://library-management-system-server-delta.vercel.app/borrow`, {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'
@@ -102,6 +103,15 @@ const Details = () => {
                         .then(res => res.json())
                         .then(data => {
                             console.log(data)
+                            if (data.acknowledged === true) {
+                                Swal.fire({
+                                    position: "top-end",
+                                    icon: "success",
+                                    title: "Borrowed book successfully",
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                });
+                            }
                         })
                 })
             setUpdatedBook((prevBook) => ({

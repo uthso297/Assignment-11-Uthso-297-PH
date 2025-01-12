@@ -21,7 +21,7 @@ const LogInPage = () => {
             .then(result => {
                 console.log(result.user)
                 // const user = { email: email }
-                // axios.post('http://localhost:5000/jwt', user, {
+                // axios.post('https://library-management-system-server-delta.vercel.app/jwt', user, {
                 //     withCredentials: true
                 // })
                 //     .then(res => {
@@ -40,7 +40,7 @@ const LogInPage = () => {
                 console.log(result.user)
 
                 // const user = { email: result.user.email }
-                // axios.post('http://localhost:5000/jwt', user, {
+                // axios.post('https://library-management-system-server-delta.vercel.app/jwt', user, {
                 //     withCredentials: true
                 // })
                 //     .then(res => {

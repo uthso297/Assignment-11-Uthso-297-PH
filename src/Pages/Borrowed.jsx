@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Components/AuthProvider";
 import PageTitle from "../Components/PageTitle";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const Borrowed = () => {
     const [books, setBooks] = useState([])
@@ -12,12 +13,12 @@ const Borrowed = () => {
     // console.log(userEmail)
 
     useEffect(() => {
-        // fetch(`http://localhost:5000/borrow?email=${userEmail}`)
+        // fetch(`https://library-management-system-server-delta.vercel.app/borrow?email=${userEmail}`)
         //     .then(res => res.json())
         //     .then(data => {
         //         setBooks(data)
         //     })
-        axios.get(`http://localhost:5000/borrow?email=${userEmail}`, {
+        axios.get(`https://library-management-system-server-delta.vercel.app/borrow?email=${userEmail}`, {
             withCredentials: true
         })
             .then(res => {
@@ -29,7 +30,7 @@ const Borrowed = () => {
 
     const handleReturnClick = (book) => {
         // console.log('clicked');
-        fetch(`http://localhost:5000/borrowed/${book.title}/return`, {
+        fetch(`https://library-management-system-server-delta.vercel.app/borrowed/${book.title}/return`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -38,13 +39,22 @@ const Borrowed = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                fetch(`http://localhost:5000/borrow/${book._id}`, {
+                fetch(`https://library-management-system-server-delta.vercel.app/borrow/${book._id}`, {
                     method: 'DELETE',
 
                 })
                     .then(res => res.json())
                     .then(data => {
                         console.log(data);
+                        if (data.deletedCount >= 1) {
+                            Swal.fire({
+                                position: "top-end",
+                                icon: "success",
+                                title: "Returned book successfully",
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                        }
                         const remainingBooks = books.filter(boi => boi._id !== book._id);
                         setBooks(remainingBooks);
                     })

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import PageTitle from '../Components/PageTitle';
+import Swal from 'sweetalert2';
 
 const AddBook = () => {
     const [bookDetails, setBookDetails] = useState({
@@ -36,7 +37,7 @@ const AddBook = () => {
         });
         // console.log(bookDetails)
 
-        fetch('http://localhost:5000/allBooks', {
+        fetch('https://library-management-system-server-delta.vercel.app/allBooks', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -44,9 +45,18 @@ const AddBook = () => {
             body: JSON.stringify(bookDetails)
         })
             .then(res => res.json())
-            .then(data =>
+            .then(data => {
                 console.log(data)
-            )
+                if (data.acknowledged === true) {
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Added book successfully",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
+            })
     };
 
     return (
