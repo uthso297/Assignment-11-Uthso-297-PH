@@ -33,7 +33,7 @@ const Register = () => {
 
         setPasswordError("");
 
-        console.log(name, email, photourl, password);
+        // console.log(name, email, photourl, password);
 
         createUser(email, password)
             .then(result => {

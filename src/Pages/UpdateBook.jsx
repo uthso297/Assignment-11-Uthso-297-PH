@@ -16,7 +16,7 @@ const UpdateBook = () => {
         book_content: ''
     });
     useEffect(() => {
-        fetch(`http://localhost:5000/allBooks/${id}`)
+        fetch(`https://library-management-system-server-delta.vercel.app/${id}`)
             .then(res => res.json())
             .then(data => {
                 setBook(data);
@@ -26,10 +26,10 @@ const UpdateBook = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(e)
-        console.log(book)
+        // console.log(e)
+        // console.log(book)
 
-        fetch(`http://localhost:5000/allBooks/${id}`, {
+        fetch(`https://library-management-system-server-delta.vercel.app/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

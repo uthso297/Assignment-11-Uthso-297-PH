@@ -23,7 +23,7 @@ const AddBook = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Book details submitted:', bookDetails);
+        // console.log('Book details submitted:', bookDetails);
         setBookDetails({
             image: '',
             title: '',
@@ -34,7 +34,7 @@ const AddBook = () => {
             rating: '',
             book_content: '',
         });
-        console.log(bookDetails)
+        // console.log(bookDetails)
 
         fetch('http://localhost:5000/allBooks', {
             method: 'POST',

@@ -13,7 +13,7 @@ const Home = () => {
     const { setCat } = useContext(AuthContext)
     const navigate = useNavigate();
     const location = useLocation();
-    console.log(location.search)
+    // console.log(location.search)
     useEffect(() => {
         if (location.search) {
             navigate("/", { replace: true });

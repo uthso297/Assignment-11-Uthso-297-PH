@@ -44,7 +44,7 @@ const Details = () => {
                 setTitle(titles);
             })
     }, [email])
-    console.log(match);
+    // console.log(match);
     useEffect(() => {
         if (title.includes(updatedBook.title)) {
             setMatch(true);
@@ -60,9 +60,9 @@ const Details = () => {
         const email = form.email.value;
         const bookReturnDate = returnDate;
         const currentDate = new Date().toISOString().split('T')[0];
-        console.log(name, email, bookReturnDate)
+        // console.log(name, email, bookReturnDate)
         const id = updatedBook._id;
-        console.log(id)
+        // console.log(id)
         const borrowedBook = {
             name,
             email,
@@ -83,7 +83,7 @@ const Details = () => {
             return
         }
         else {
-            fetch(`http://localhost:5000/allBooks/${id}/borrow`, {
+            fetch(`https://library-management-system-server-delta.vercel.app/${id}/borrow`, {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

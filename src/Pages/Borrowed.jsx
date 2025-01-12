@@ -9,7 +9,7 @@ const Borrowed = () => {
 
     const userEmail = user?.email
 
-    console.log(userEmail)
+    // console.log(userEmail)
 
     useEffect(() => {
         // fetch(`http://localhost:5000/borrow?email=${userEmail}`)
@@ -25,10 +25,10 @@ const Borrowed = () => {
             })
     }, [userEmail])
 
-    console.log(books)
+    // console.log(books)
 
     const handleReturnClick = (book) => {
-        console.log('clicked');
+        // console.log('clicked');
         fetch(`http://localhost:5000/borrowed/${book.title}/return`, {
             method: 'POST',
             headers: {

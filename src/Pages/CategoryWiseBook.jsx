@@ -9,9 +9,9 @@ const CategoryWiseBook = () => {
     const [books, setBooks] = useState([]);
     const [loading, setLoading] = useState(true);
     const location = useLocation();
-    console.log(location)
+    // console.log(location)
     const queryParam = new URLSearchParams(location.search)
-    console.log(queryParam)
+    // console.log(queryParam)
     const urlCategory = queryParam.get('category');
     const category = urlCategory || cat
     useEffect(() => {
