@@ -4,6 +4,7 @@ import Spinner from "../Components/Spinner";
 import { useContext } from "react";
 import { AuthContext } from "../Components/AuthProvider";
 import PageTitle from "../Components/PageTitle";
+import axios from "axios";
 
 const Details = () => {
     const book = useLoaderData();
@@ -13,7 +14,7 @@ const Details = () => {
     const [updatedBook, setUpdatedBook] = useState(book);
     const [modal, setModal] = useState(false);
     const [match, setMatch] = useState(false);
-    const [bids, setBids] = useState([]);
+    const [title, setTitle] = useState([]);
 
     const handleCloseModal = () => {
         setModal(false);
@@ -28,21 +29,29 @@ const Details = () => {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:5000/borrow?email=${email}`)
-            .then(res => res.json())
-            .then(data => {
-                const ids = data.map(item => item._id);
-                setBids(ids);
+        // fetch(`http://localhost:5000/borrow?email=${email}`)
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         const ids = data.map(item => item._id);
+        //         setBids(ids);
+        //     })
+
+        axios.get(`http://localhost:5000/borrow?email=${email}`, {
+            withCredentials: true
+        })
+            .then(res => {
+                const titles = res.data.map(item => item.title);
+                setTitle(titles);
             })
     }, [email])
-
+    console.log(match);
     useEffect(() => {
-        if (bids.includes(updatedBook._id)) {
+        if (title.includes(updatedBook.title)) {
             setMatch(true);
         } else {
             setMatch(false);
         }
-    }, [bids, updatedBook._id]);
+    }, [title, updatedBook.title]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -83,7 +92,7 @@ const Details = () => {
                 .then(res => res.json())
                 .then(data => {
                     console.log(data)
-                    fetch(`http://localhost:5000/borrow/${id}`, {
+                    fetch(`http://localhost:5000/borrow`, {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'
@@ -211,4 +220,3 @@ const Details = () => {
 };
 
 export default Details;
-

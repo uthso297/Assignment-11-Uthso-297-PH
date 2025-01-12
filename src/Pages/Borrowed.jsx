@@ -29,7 +29,7 @@ const Borrowed = () => {
 
     const handleReturnClick = (book) => {
         console.log('clicked');
-        fetch(`http://localhost:5000/borrowed/${book._id}/return`, {
+        fetch(`http://localhost:5000/borrowed/${book.title}/return`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
