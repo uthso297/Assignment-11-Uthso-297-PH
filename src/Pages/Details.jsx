@@ -36,9 +36,6 @@ const Details = () => {
             })
     }, [email])
 
-    console.log(bids)
-
-
     useEffect(() => {
         if (bids.includes(updatedBook._id)) {
             setMatch(true);
@@ -71,7 +68,7 @@ const Details = () => {
             handleCloseModal()
             return
         }
-        else if (match) {
+        else if (match === true) {
             alert('already borrowed')
             handleCloseModal()
             return

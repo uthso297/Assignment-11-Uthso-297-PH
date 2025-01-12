@@ -3,6 +3,7 @@ import { FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Components/AuthProvider";
 import PageTitle from "../Components/PageTitle";
+import axios from "axios";
 
 const LogInPage = () => {
     const { signInUser, handleGoogleLogin } = useContext(AuthContext)
@@ -19,7 +20,15 @@ const LogInPage = () => {
         signInUser(email, password)
             .then(result => {
                 console.log(result.user)
-                navigate(location.state || '/')
+                const user = { email: email }
+                axios.post('http://localhost:5000/jwt', user, {
+                    withCredentials: true
+                })
+                    .then(res => {
+                        console.log(res.data);
+                    })
+
+                // navigate(location.state || '/')
             })
             .catch(error => {
                 console.log(error.message)
@@ -29,6 +38,15 @@ const LogInPage = () => {
         handleGoogleLogin()
             .then(result => {
                 console.log(result.user)
+
+                const user = { email: result.user.email }
+                axios.post('http://localhost:5000/jwt', user, {
+                    withCredentials: true
+                })
+                    .then(res => {
+                        console.log(res.data);
+                    })
+
                 navigate(location.state || '/')
             })
             .catch(err => {

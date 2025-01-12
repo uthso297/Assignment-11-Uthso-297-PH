@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Components/AuthProvider";
 import PageTitle from "../Components/PageTitle";
+import axios from "axios";
 
 const Borrowed = () => {
     const [books, setBooks] = useState([])
@@ -11,10 +12,16 @@ const Borrowed = () => {
     console.log(userEmail)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/borrow?email=${userEmail}`)
-            .then(res => res.json())
-            .then(data => {
-                setBooks(data)
+        // fetch(`http://localhost:5000/borrow?email=${userEmail}`)
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         setBooks(data)
+        //     })
+        axios.get(`http://localhost:5000/borrow?email=${userEmail}`, {
+            withCredentials: true
+        })
+            .then(res => {
+                setBooks(res.data)
             })
     }, [userEmail])
 
