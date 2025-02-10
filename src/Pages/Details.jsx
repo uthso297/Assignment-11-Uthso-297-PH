@@ -126,7 +126,7 @@ const Details = () => {
         return <Spinner></Spinner>
     }
     return (
-        <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4 py-8">
+        <div className="min-h-screen flex items-center justify-center px-4 pt-20">
             <PageTitle title="Book Matrix || Details"></PageTitle>
 
             <div className="bg-white shadow-lg rounded-lg max-w-3xl w-full overflow-hidden">

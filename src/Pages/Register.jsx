@@ -3,6 +3,7 @@ import { FaGoogle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Components/AuthProvider";
 import PageTitle from "../Components/PageTitle";
+import Swal from "sweetalert2";
 
 const Register = () => {
     const { createUser, setUser, updateUserProfile, handleGoogleLogin } = useContext(AuthContext);
@@ -39,6 +40,13 @@ const Register = () => {
             .then(result => {
                 setUser(result.user);
                 updateUserProfile({ displayName: name, photoURL: photourl });
+                Swal.fire({
+                    position: "top-center",
+                    icon: "success",
+                    title: "Successfully Registered",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
                 navigate('/');
                 console.log(result.user);
             })
@@ -51,6 +59,13 @@ const Register = () => {
         handleGoogleLogin()
             .then(result => {
                 console.log(result.user);
+                Swal.fire({
+                    position: "top-center",
+                    icon: "success",
+                    title: "Successfull",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
                 navigate('/');
             })
             .catch(err => {

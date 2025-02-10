@@ -1,12 +1,20 @@
 import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Components/AuthProvider";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
     const { user, signOutUser } = useContext(AuthContext);
 
     const handeLogout = () => {
         signOutUser();
+        Swal.fire({
+            position: "top-center",
+            icon: "success",
+            title: "Successfully Log Out",
+            showConfirmButton: false,
+            timer: 1500
+        });
     };
 
     const links = (
@@ -102,7 +110,7 @@ const Navbar = () => {
                         }
                     </ul>
                 </div>
-                <a className="btn bg-inherit border-none shadow-none text-lg lg:text-4xl text-white">BookMatrix</a>
+                <a className="text-lg lg:text-4xl text-white">BookMatrix</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 {

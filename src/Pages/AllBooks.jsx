@@ -44,7 +44,7 @@ const AllBooks = () => {
                 <PageTitle title="Book Matrix || All Books"></PageTitle>
 
                 {/* Toggle View Dropdown */}
-                <div className="mb-4 space-y-4 md:space-y-0 md:flex md:items-center md:justify-evenly">
+                <div className="mb-7 space-y-4 md:space-y-0 md:flex md:items-center md:justify-evenly">
                     <div>
                         <button
                             onClick={() => setShowAvailable(!showAvailable)}

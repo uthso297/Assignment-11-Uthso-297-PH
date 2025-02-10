@@ -3,10 +3,12 @@ import { AuthContext } from "../Components/AuthProvider";
 import PageTitle from "../Components/PageTitle";
 import axios from "axios";
 import Swal from "sweetalert2";
+import Spinner from "../Components/Spinner";
 
 const Borrowed = () => {
     const [books, setBooks] = useState([])
     const { user } = useContext(AuthContext);
+    const [loading, setLoading] = useState(true)
 
     const userEmail = user?.email
 
@@ -23,6 +25,7 @@ const Borrowed = () => {
         })
             .then(res => {
                 setBooks(res.data)
+                setLoading(false)
             })
     }, [userEmail])
 
@@ -62,9 +65,22 @@ const Borrowed = () => {
 
     }
 
+    if (loading) {
+        return <Spinner></Spinner>
+    }
+
+    if (books.length === 0) {
+        return <div className="h-[70vh] pt-20 px-4">
+
+            <p className="text-center text-5xl font-bold">Oops!You haven't borrowed any book yet</p>
+
+        </div>
+    }
+
     return (
-        <div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-4 py-4">
+        <div className="h-[70vh] pt-20">
+            <h1 className="text-center text-4xl">Your Borrowed Books</h1>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-4 py-4 ">
                 <PageTitle title="Book Matrix || Borrowed Book"></PageTitle>
 
                 {books.map((book, index) => (
