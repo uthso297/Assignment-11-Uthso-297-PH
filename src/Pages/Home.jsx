@@ -19,15 +19,15 @@ const Home = () => {
             navigate("/", { replace: true });
         }
         // setTimeout(() => {
-            
+
         // }, 2000);
         fetch('https://library-management-system-server-delta.vercel.app/allBooks')
-                // fetch('https://library-management-system-server-delta.vercel.app/allBooks')
-                .then(res => res.json())
-                .then(data => {
-                    setBooks(data);
-                    setLoading(false);
-                });
+            // fetch('https://library-management-system-server-delta.vercel.app/allBooks')
+            .then(res => res.json())
+            .then(data => {
+                setBooks(data);
+                setLoading(false);
+            });
     }, []);
 
     useEffect(() => {
@@ -50,7 +50,10 @@ const Home = () => {
             <Carousel></Carousel>
             {/* categories section */}
             <div className="bg-[#f7f3ea] py-3">
-                <h1 className="text-center text-3xl font-semibold mb-6">Explore Book Categories</h1>
+                <h1 className="text-center text-3xl font-semibold mb-3">Explore Book Categories</h1>
+
+                <p className="px-4 text-lg ">Explore a wide variety of book categories to discover your next great read. From thrilling mysteries and heartwarming fiction to informative non-fiction and thought-provoking science fiction, our collection has something for every reader. Browse through different genres and find books that match your interests, whether you're looking for an escape, learning, or inspiration.</p>
+
 
                 {loading ? (
                     <div className="flex justify-center items-center">
@@ -64,9 +67,9 @@ const Home = () => {
                                 <div
                                     key={index}
                                     onClick={() => handleCat(category)}
-                                    className=" p-4 hover:shadow-xl duration-200 inline-block px-3 py-2 rounded-lg transform transition bg-indigo-500 hover:bg-indigo-400 hover:-translate-y-0.5 focus:ring-indigo-500 focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-indigo-600 uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base cursor-pointer"
+                                    className=" p-4 hover:shadow-xl duration-200 px-3 py-2 rounded-lg transform transition bg-indigo-500 hover:bg-indigo-400 hover:-translate-y-0.5 focus:ring-indigo-500 focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-indigo-600 uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base cursor-pointer flex justify-center items-center"
                                 >
-                                    <button className="text-xl font-semibold">{category}</button>
+                                    <button className="text-xl font-semibold text-black">{category}</button>
                                 </div>
                             ))
                         ) : (
