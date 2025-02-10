@@ -8,55 +8,77 @@ const AllBooks = () => {
     const [loading, setLoading] = useState(true);
     const [showAvailable, setShowAvailable] = useState(false);
     const [viewMode, setViewMode] = useState("card");
+    const [sortOrder, setSortOrder] = useState("asc");
     const navigate = useNavigate();
 
     useEffect(() => {
-        // setTimeout(() => {
-
-        // }, 2000);
-
         fetch('https://library-management-system-server-delta.vercel.app/allBooks')
             .then(res => res.json())
             .then(data => {
                 setBooks(data);
                 setLoading(false);
             });
-
     }, []);
 
     const handleUpdateClick = (book) => {
         navigate(`update/${book._id}`);
     };
 
+    const sortedBooks = [...books].sort((a, b) => {
+        if (sortOrder === "asc") {
+            return a.quantity - b.quantity;
+        } else {
+            return b.quantity - a.quantity;
+        }
+    });
+
     const filteredBooks = showAvailable
-        ? books.filter(book => book.quantity > 0)
-        : books;
+        ? sortedBooks.filter(book => book.quantity > 0)
+        : sortedBooks;
 
     if (loading) {
         return <Spinner />;
     } else {
         return (
-            <div className="px-4 py-4">
+            <div className="px-4 pt-20">
                 <PageTitle title="Book Matrix || All Books"></PageTitle>
 
                 {/* Toggle View Dropdown */}
-                <div className="mb-4 flex items-center space-x-4">
-                    <button
-                        onClick={() => setShowAvailable(!showAvailable)}
-                        className="py-2 px-4 bg-green-600 text-white rounded-lg hover:bg-green-700 transition duration-300"
-                    >
-                        {showAvailable ? "Show All Books" : "Show Available Books"}
-                    </button>
+                <div className="mb-4 space-y-4 md:space-y-0 md:flex md:items-center md:justify-evenly">
+                    <div>
+                        <button
+                            onClick={() => setShowAvailable(!showAvailable)}
+                            className="py-2 px-4 bg-green-600 text-white rounded-lg hover:bg-green-700 transition duration-300"
+                        >
+                            {showAvailable ? "Show All Books" : "Show Available Books"}
+                        </button>
+                    </div>
 
-                    {/* View Mode Dropdown */}
-                    <select
-                        onChange={(e) => setViewMode(e.target.value)}
-                        value={viewMode}
-                        className="py-2 px-4 bg-gray-200 text-gray-700 rounded-lg border border-gray-300"
-                    >
-                        <option value="card">Card View</option>
-                        <option value="table">Table View</option>
-                    </select>
+                    <div>
+                        {/* Sort by Quantity Dropdown */}
+                        <select
+                            onChange={(e) => setSortOrder(e.target.value)}
+                            value={sortOrder}
+                            className="py-2 px-4 bg-gray-200 text-gray-700 rounded-lg border border-gray-300"
+                        >
+                            <option value="asc">Sort by Ascending Quantity</option>
+                            <option value="desc">Sort by Descending Quantity</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        {/* View Mode Dropdown */}
+                        <select
+                            onChange={(e) => setViewMode(e.target.value)}
+                            value={viewMode}
+                            className="py-2 px-4 bg-gray-200 text-gray-700 rounded-lg border border-gray-300"
+                        >
+                            <option value="card">Card View</option>
+                            <option value="table">Table View</option>
+                        </select>
+
+                    </div>
+
                 </div>
 
                 {/* Display books based on view mode */}
@@ -127,3 +149,4 @@ const AllBooks = () => {
 };
 
 export default AllBooks;
+
