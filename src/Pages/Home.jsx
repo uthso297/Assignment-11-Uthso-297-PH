@@ -18,15 +18,16 @@ const Home = () => {
         if (location.search) {
             navigate("/", { replace: true });
         }
-        setTimeout(() => {
-            fetch('https://library-management-system-server-delta.vercel.app/allBooks')
+        // setTimeout(() => {
+            
+        // }, 2000);
+        fetch('https://library-management-system-server-delta.vercel.app/allBooks')
                 // fetch('https://library-management-system-server-delta.vercel.app/allBooks')
                 .then(res => res.json())
                 .then(data => {
                     setBooks(data);
                     setLoading(false);
                 });
-        }, 2000);
     }, []);
 
     useEffect(() => {
@@ -43,7 +44,7 @@ const Home = () => {
     }
 
     return (
-        <div>
+        <div className="pt-20">
             <PageTitle title="Home||Book Matrix"></PageTitle>
             {/* banner section */}
             <Carousel></Carousel>

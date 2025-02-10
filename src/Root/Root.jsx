@@ -4,7 +4,7 @@ import Footer from "../Shared/Footer";
 
 const Root = () => {
     return (
-        <div className="">
+        <div className="lato-regular">
             <Navbar></Navbar>
             <Outlet></Outlet>
             <Footer></Footer>

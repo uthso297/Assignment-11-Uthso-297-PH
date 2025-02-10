@@ -5,25 +5,25 @@ const slides = [
         title: "Welcome to Our Library",
         description:
             "Explore a world of knowledge with our extensive collection of books, journals, and online resources.",
-        img: "https://i.ibb.co.com/zJfHLCR/slider1.webp",
+        img: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=2128&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
         title: "Browse and Borrow Books",
         description:
             "Easily search for books across different genres, reserve them, and borrow them all from our digital platform.",
-        img: "https://i.ibb.co.com/PN76szG/slider2.jpg",
+        img: "https://media.istockphoto.com/id/1448121931/photo/young-woman-borrowing-a-book-from-the-library.jpg?s=2048x2048&w=is&k=20&c=poGceENqL3MP8iobJa_9maxc0ZOlbFYMIy4FmGxlMqo=",
     },
     {
         title: "Access Online Resources",
         description:
             "Get access to e-books, journals, and research papers from renowned libraries and educational institutions.",
-        img: "https://i.ibb.co.com/KqTq7k4/slider3.webp",
+        img: "https://media.istockphoto.com/id/940972538/photo/online-library-or-e-learning-concept-open-laptop-and-book-compilation.jpg?s=2048x2048&w=is&k=20&c=INb0ofVjk7sRNIuVsVBxN9Y0DL2FOIzuUa6pjp29Jqk=",
     },
     {
         title: "Join Our Community",
         description:
             "Become a member today to access a wealth of learning and growth opportunities with our library services.",
-        img: "https://i.ibb.co.com/bNf445N/slider4.jpg",
+        img: "https://img.freepik.com/free-photo/diverse-education-shoot_53876-47031.jpg?t=st=1739220704~exp=1739224304~hmac=d7f5ebafe14803749ecac19d46e9b180631db9660679828a8e37d962de3fb883&w=1380",
     },
 ];
 
@@ -56,7 +56,7 @@ const Carousel = () => {
                     {slides.map((slide, index) => (
                         <div key={index} className="w-full flex-shrink-0">
                             <div className="bg-gray-100 p-6">
-                                <img src={slide.img} alt={slide.title} className="w-full h-80 object-cover rounded-lg" />
+                                <img src={slide.img} alt={slide.title} className="w-full h-[60vh] rounded-lg" />
                                 <h2 className="text-2xl font-semibold mt-4">{slide.title}</h2>
                                 <p className="text-gray-700 mt-2">{slide.description}</p>
                             </div>

@@ -11,14 +11,17 @@ const AllBooks = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        setTimeout(() => {
-            fetch('https://library-management-system-server-delta.vercel.app/allBooks')
-                .then(res => res.json())
-                .then(data => {
-                    setBooks(data);
-                    setLoading(false);
-                });
-        }, 2000);
+        // setTimeout(() => {
+
+        // }, 2000);
+
+        fetch('https://library-management-system-server-delta.vercel.app/allBooks')
+            .then(res => res.json())
+            .then(data => {
+                setBooks(data);
+                setLoading(false);
+            });
+
     }, []);
 
     const handleUpdateClick = (book) => {
