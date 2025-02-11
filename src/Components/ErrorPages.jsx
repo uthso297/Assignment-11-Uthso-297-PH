@@ -9,10 +9,10 @@ const ErrorPages = () => {
                     <i className="fas fa-exclamation-triangle"></i>
                 </div>
                 <h1 className="text-3xl font-semibold text-gray-800 mb-2">
-                    404 Error!Can not find page
+                    Somethings wrong here....
                 </h1>
                 <p className="text-lg text-gray-600 mb-6">
-                    Sorry, an unexpected error occurred. Please try again later.
+                    Sorry, we can not find the page you are looking for.
                 </p>
                 <Link to={'/'}>
                     <button

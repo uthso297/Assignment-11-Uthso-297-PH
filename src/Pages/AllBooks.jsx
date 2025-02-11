@@ -1,9 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Spinner from "../Components/Spinner";
 import { useNavigate } from "react-router-dom";
 import PageTitle from "../Components/PageTitle";
+import { AuthContext } from "../Components/AuthProvider";
+import Swal from "sweetalert2";
 
 const AllBooks = () => {
+    const { user } = useContext(AuthContext)
     const [books, setBooks] = useState([]);
     const [loading, setLoading] = useState(true);
     const [showAvailable, setShowAvailable] = useState(false);
@@ -21,7 +24,16 @@ const AllBooks = () => {
     }, []);
 
     const handleUpdateClick = (book) => {
-        navigate(`update/${book._id}`);
+        if (user) {
+            navigate(`update/${book._id}`);
+        } else {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "You have to login to access this feature!"
+            });
+            navigate(`update/${book._id}`);
+        }
     };
 
     const sortedBooks = [...books].sort((a, b) => {

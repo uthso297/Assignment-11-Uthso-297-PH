@@ -58,7 +58,7 @@ const Carousel = () => {
                             <div className="bg-gray-100 p-6">
                                 <img src={slide.img} alt={slide.title} className="w-full h-[60vh] rounded-lg" />
                                 <h2 className="text-2xl font-semibold mt-4">{slide.title}</h2>
-                                <p className="text-gray-700 mt-2">{slide.description}</p>
+                                <p className="text-gray-700 my-2">{slide.description}</p>
                             </div>
                         </div>
                     ))}

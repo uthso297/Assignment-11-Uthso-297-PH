@@ -12,6 +12,8 @@ const LogInPage = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [emailForReset, setEmailForReset] = useState("");
 
+    console.log(location.state);
+
     const handleLogin = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -40,6 +42,8 @@ const LogInPage = () => {
         handleGoogleLogin()
             .then(result => {
                 console.log(result.user);
+                
+                navigate(location.state || '/');
                 Swal.fire({
                     position: "top-center",
                     icon: "success",
@@ -48,7 +52,6 @@ const LogInPage = () => {
                     timer: 1500
                 });
 
-                navigate(location.state || '/');
             })
             .catch(err => {
                 console.log(err);
@@ -70,7 +73,7 @@ const LogInPage = () => {
                         showConfirmButton: false,
                         timer: 1500
                     });
-                    setIsModalOpen(false); 
+                    setIsModalOpen(false);
                 })
                 .catch(error => {
                     Swal.fire({
