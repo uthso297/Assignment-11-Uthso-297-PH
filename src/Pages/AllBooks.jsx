@@ -123,13 +123,13 @@ const AllBooks = () => {
                     // Table View
                     <table className="min-w-full table-auto">
                         <thead className="bg-gray-200">
-                            <tr>
-                                <th className="py-2 px-4 border-b">Title</th>
-                                <th className="py-2 px-4 border-b">Author</th>
-                                <th className="py-2 px-4 border-b">Category</th>
-                                <th className="py-2 px-4 border-b">Quantity</th>
-                                <th className="py-2 px-4 border-b">Rating</th>
-                                <th className="py-2 px-4 border-b">Actions</th>
+                            <tr className="text-black">
+                                <th className="py-2 px-4 border-b text-left">Title</th>
+                                <th className="py-2 px-4 border-b text-left">Author</th>
+                                <th className="py-2 px-4 border-b text-left">Category</th>
+                                <th className="py-2 px-4 border-b text-left">Quantity</th>
+                                <th className="py-2 px-4 border-b text-left">Rating</th>
+                                <th className="py-2 px-4 border-b text-left">Actions</th>
                             </tr>
                         </thead>
                         <tbody>

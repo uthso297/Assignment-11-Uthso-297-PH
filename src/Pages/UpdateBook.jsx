@@ -4,6 +4,8 @@ import PageTitle from "../Components/PageTitle";
 import Swal from "sweetalert2";
 
 const UpdateBook = () => {
+    const [theme,setTheme] = useState(localStorage.getItem("theme"))
+    console.log(theme);
     const params = useParams();
     const id = (params.id)
     const [book, setBook] = useState({
@@ -66,7 +68,7 @@ const UpdateBook = () => {
             <h2 className="text-2xl font-bold text-center mb-6">Update Book</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                    <label htmlFor="image" className="block text-sm font-medium text-gray-700">
+                    <label htmlFor="image" className={`block text-lg font-medium text-gray-700 ${theme === 'light' ? 'text-gray-700' : 'text-white' }`}>
                         Book Cover Image URL
                     </label>
                     <input
@@ -82,7 +84,7 @@ const UpdateBook = () => {
                 </div>
 
                 <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                    <label htmlFor="name" className={`block text-lg font-medium text-gray-700 ${theme === 'light' ? 'text-gray-700' : 'text-white' }`}>
                         Book Title
                     </label>
                     <input
@@ -98,7 +100,7 @@ const UpdateBook = () => {
                 </div>
 
                 <div>
-                    <label htmlFor="quantity" className="block text-sm font-medium text-gray-700">
+                    <label htmlFor="quantity" className={`block text-lg font-medium text-gray-700 ${theme === 'light' ? 'text-gray-700' : 'text-white' }`}>
                         Quantity
                     </label>
                     <input
@@ -115,7 +117,7 @@ const UpdateBook = () => {
                 </div>
 
                 <div>
-                    <label htmlFor="authorName" className="block text-sm font-medium text-gray-700">
+                    <label htmlFor="authorName" className={`block text-lg font-medium text-gray-700 ${theme === 'light' ? 'text-gray-700' : 'text-white' }`}>
                         Author Name
                     </label>
                     <input
@@ -131,7 +133,7 @@ const UpdateBook = () => {
                 </div>
 
                 <div>
-                    <label htmlFor="category" className="block text-sm font-medium text-gray-700">
+                    <label htmlFor="category" className={`block text-lg font-medium text-gray-700 ${theme === 'light' ? 'text-gray-700' : 'text-white' }`}>
                         Category
                     </label>
                     <select
@@ -152,7 +154,7 @@ const UpdateBook = () => {
                 </div>
 
                 <div>
-                    <label htmlFor="shortDescription" className="block text-sm font-medium text-gray-700">
+                    <label htmlFor="shortDescription" className={`block text-lg font-medium text-gray-700 ${theme === 'light' ? 'text-gray-700' : 'text-white' }`}>
                         Short Description
                     </label>
                     <textarea
@@ -168,7 +170,7 @@ const UpdateBook = () => {
                 </div>
 
                 <div>
-                    <label htmlFor="rating" className="block text-sm font-medium text-gray-700">
+                    <label htmlFor="rating" className={`block text-lg font-medium text-gray-700 ${theme === 'light' ? 'text-gray-700' : 'text-white' }`}>
                         Rating (1-5)
                     </label>
                     <input
@@ -185,7 +187,7 @@ const UpdateBook = () => {
                 </div>
 
                 <div>
-                    <label htmlFor="bookContent" className="block text-sm font-medium text-gray-700">
+                    <label htmlFor="bookContent" className={`block text-lg font-medium text-gray-700 ${theme === 'light' ? 'text-gray-700' : 'text-white' }`}>
                         Book Content
                     </label>
                     <textarea

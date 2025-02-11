@@ -89,7 +89,7 @@ const Home = () => {
 
             <Carousel></Carousel>
             {/* categories section */}
-            <div className="bg-[#f7f3ea] py-3 my-5">
+            <div className={`py-3 my-5 ${theme === 'light' ? 'text-black' : 'text-white'}`} >
                 <h1 className="text-center text-3xl font-semibold mb-3">Explore Book Categories</h1>
 
                 <p className="px-4 text-lg ">Explore a wide variety of book categories to discover your next great read. From thrilling mysteries and heartwarming fiction to informative non-fiction and thought-provoking science fiction, our collection has something for every reader. Browse through different genres and find books that match your interests, whether you're looking for an escape, learning, or inspiration.</p>
